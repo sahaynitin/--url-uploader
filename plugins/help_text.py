@@ -22,7 +22,7 @@ from translation import Translation
 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
+from database import pyrogram
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 

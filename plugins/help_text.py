@@ -37,7 +37,7 @@ def GetExpiryDate(chat_id):
 async def help_user(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/help")
-    await bot.send_message(
+    await addusers bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/All_Movie_Rockers")]]),
@@ -53,7 +53,7 @@ async def get_me_info(bot, update):
     TRChatBase(update.from_user.id, update.text, "/about")
     chat_id = str(update.from_user.id)
     chat_id, plan_type, expires_at = GetExpiryDate(chat_id)
-    await bot.send_message(
+    await addusers bot.send_message(
         chat_id=update.chat.id,
         text=Translation.CURENT_PLAN_DETAILS.format(chat_id, plan_type, expires_at),
       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/All_Movie_Rockers")]]),
@@ -82,7 +82,7 @@ async def start(bot, update):
 async def upgrade(bot, update):
     # logger.info(update)
     TRChatBase(update.from_user.id, update.text, "/upgrade")
-    await bot.send_message(
+    await addusers bot.send_message(
         chat_id=update.chat.id,
         text=Translation.UPGRADE_TEXT,
         parse_mode="html",
